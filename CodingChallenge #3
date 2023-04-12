@@ -1,0 +1,52 @@
+
+//CodingChallenge #3
+/*
+Calculadora de gorjetas
+15% se a conta estiver entre 50 e 300
+Se for diferente a gorjeta é de 20%
+DADOS DE TESTE
+TESTE 1 - R$275,00 
+TESTE 2 - R$41,25
+TESTE 3 - R$430,00
+*/
+const conta = 275;
+const gorjeta15 = (conta * 0.15);
+const gorjeta20 = (conta * 0.2);
+
+
+switch (true) {
+    case conta >= 50 && conta <= 300:
+        console.log(
+            `conta:R$${conta} a gorjeta:R$${gorjeta15} e total:R$${conta + gorjeta15}`
+        );
+        break;
+    case conta < 50 || conta > 300:
+        console.log(
+            `conta:R$${conta} a gorjeta:R$${gorjeta20} e total:R$${conta + gorjeta20}`
+        );
+        break;
+    default:
+        console.log("ERRO!");
+}
+
+console.log(gorjeta15, gorjeta20);
+console.log(typeof conta);
+
+if (conta >= 50 || conta <= 300) {
+    console.log(`conta:R$${conta} a gorjeta:R$${gorjeta15} e total:R$${conta + gorjeta15}`);
+} else if (conta < 50 || conta < 300) {
+    console.log(`conta:R$${conta} a gorjeta:R$${gorjeta20} e total:R$${conta + gorjeta20}`);
+} else {
+    console.log("ERRO! TENTE NOVAMENTE...HEHEHE")
+}
+
+conta >= 50 || conta <= 300 ? console.log(`conta:R$${conta} a gorjeta:R$${gorjeta15} e total:R$${conta + gorjeta15}`) :
+    console.log(`conta:R$${conta} a gorjeta:R$${gorjeta20} e total:R$${conta + gorjeta20}`);
+
+let conta2;
+if (conta >= 50 || conta <= 300) {
+    conta2 = `conta:R$${conta} a gorjeta:R$${gorjeta15} e total:R$${conta + gorjeta15}`;
+} else {
+    conta2 = `conta:R$${conta} a gorjeta:R$${gorjeta20} e total:R$${conta + gorjeta20}`;
+}
+console.log(conta2);
