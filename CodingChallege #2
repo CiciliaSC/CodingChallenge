@@ -1,0 +1,67 @@
+//CodingChallege #2
+//Duas equipes de ginastica - Golfinhos e Coalas
+//competem entre si 3 vezes, aqueles que obtiveram a maior pontuação média, ganha o troféu
+// Dados - Golfinhos - 96 , 108 e 89 e Coalas - 88 , 91 e 110 = Coalas WIN!!
+// TEST DATA BONUS 1 condi >=100 - Golfinhos - 97, 112 e 101 - Coalas - 109, 95 e 123 = Golfinhos WIN!!
+// TEST DATA BONUS 2 condi >=100 - Golfinhos - 97, 112 E 101 - Coalas - 109, 95 e 106 = EMPATE!!
+
+const golfinhos = (97 + 112 + 101) / 3;
+const coalas = (109 + 95 + 106) / 3;
+
+console.log(golfinhos, coalas);
+
+const golfCoa = golfinhos > coalas;
+const coaGolf = coalas > golfinhos;
+const empateGC = golfinhos === coalas && golfinhos >= 100 && coalas >= 100;
+
+
+if (golfCoa && golfinhos >= 100) {
+    console.log(`Parabéns Golfinhos!! Obtiveram a média de ${golfinhos} !`);
+} else if (coaGolf && coalas >= 100) {
+    console.log(`Parabéns Coalas!! Obtiveram a média de ${coalas}!`);
+} else if (empateGC) {
+    console.log('Empate!!');
+} else {
+    console.log('ERRO!');
+}
+
+
+//CodingChallege #2 - Part 2
+
+
+//Novamente duas equipes de ginastica - Coalas e Golfinhos
+//Cada equipe compete 3 vezes, e a pontuação é calculada da seguinte maneira
+//Faz uma média da pontuação das rodadas de cada equipe
+//E para o critério de vitória o ganhador tem que ter pelo menos o DOBRO de diferença do adversário
+//Caso contrário ninguém ganha!
+// Dados de teste: Golfinhos - 44, 23 e 71 - Coalas - 65, 54 e 49 - Ganhador: `Nenhum vencedor, não condiz com o criério!`
+// Dados de teste: Golfinhos - 85, 54 e 41 - Coalas - 23, 34 e 27 - Ganhador: `Golfinhos ganharam de 60 vs. 28!!`
+
+'use strict';
+
+const media = (a, b, c) => (a + b + c) / 3;
+
+//test 1
+let golfMed = media(44, 23, 71);
+let coaMed = media(65, 54, 49);
+console.log(coaMed, golfMed);
+
+const vencedor = function (golfMed, coaMed) {
+
+    if (golfMed >= (coaMed * 2)) {
+        console.log(`Golfinhos ganharam de ${golfMed} vs. ${coaMed}!!`);
+    } else if (coaMed >= (golfMed * 2)) {
+        console.log(`Coalas ganharam de ${coaMed} vs. ${golfMed}!!`);
+    } else {
+        console.log(`Nenhum vencedor, não condiz com o criério!`);
+    }
+}
+
+vencedor(golfMed, coaMed);
+//vencedor(22, 11);
+
+//text 2
+golfMed = media(85, 54, 41);
+coaMed = media(23, 34, 27);
+
+vencedor(golfMed, coaMed);
