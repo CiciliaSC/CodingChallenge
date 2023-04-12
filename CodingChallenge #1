@@ -1,0 +1,35 @@
+//Coding Challenge #1 - Calcular IMC - Massa/Altura^2
+
+const markIMC = 92 / (1.95 ** 2);
+const johnIMC = 78 / (1.76 ** 2);
+//Comparativos
+const markHigherIMC = (markIMC > johnIMC);
+const johnHigherIMC = (johnIMC > markIMC);
+
+console.log(markIMC, johnIMC);
+
+console.log(markHigherIMC);
+console.log(johnHigherIMC);
+
+
+
+//Coding Challenge #1 - part 2
+
+if (markIMC >= 29.99) {
+    console.log(`Seu IMC (${markIMC}) , Procure um profissional para te ajudar, você está acima de peso!`);
+} else {
+    console.log(` Parabens! Seu IMC (${markIMC}), normal!`);
+}
+
+if (johnIMC >= 29.99) {
+    console.log(`Seu IMC (${johnIMC}) , Procure um profissional para te ajudar, você está acima de peso!`);
+} else {
+    console.log(` Parabens! Seu IMC (${johnIMC}), normal!`);
+}
+
+
+if (markHigherIMC) {
+    console.log(`Mark tem o IMC maior do que Jhon`);
+} else {
+    console.log(`Jhon tem o IMC maior do que Mark`)
+}
